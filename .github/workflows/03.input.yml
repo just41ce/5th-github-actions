@@ -1,0 +1,31 @@
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '이름 (영소문자)'
+        required: true
+        default: 'user'
+        type: string
+      environment:
+        description: '배포 환경'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+      debug:
+        description: '디버그 모드'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  use-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 입력값 확인
+        run: |
+          echo "이름: ${{ inputs.name }}"
+          echo "환경: ${{ inputs.environment }}"
+          echo "디버그: ${{ inputs.debug }}"
