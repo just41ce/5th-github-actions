@@ -27,8 +27,9 @@ jobs:
       artifact_name: ${{ steps.set-name.outputs.value }}
     steps:
       - id: set-name
-        run: echo "value=myapp-${{ github.run_number }}.jar" >> $GITHUB_OUTPUT
-      - run: echo "빌드 완료"
+        run: |
+          echo "value=myapp-${{ github.run_number }}.jar" >> $GITHUB_OUTPUT
+          echo "빌드 완료"
 
   deploy:
     runs-on: ubuntu-latest
