@@ -1,3 +1,4 @@
+```
 name: Build Metadata Generator
 on:
   workflow_dispatch
@@ -33,3 +34,4 @@ jobs:
           echo "Arch: ${{ runner.arch }}"
           echo "Repository: ${{ github.repository }}"
           echo "Branch: ${{ github.ref_name }}"
+```
