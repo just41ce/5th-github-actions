@@ -17,8 +17,9 @@ jobs:
       passed_count: ${{ steps.count.outputs.value }}
     steps:
       - id: count
-        run: echo "value=5" >> $GITHUB_OUTPUT
-      - run: echo "테스트 통과: 5/5"
+        run: |
+          echo "value=5" >> $GITHUB_OUTPUT
+          echo "테스트 통과: 5/5"
 
   build:
     runs-on: ubuntu-latest
